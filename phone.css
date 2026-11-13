@@ -1,0 +1,12 @@
+/* Phone-only tweaks for DJ O'Neil. Loaded after the mixer's own styles. */
+html,body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+/* things you drag with a finger: stop the phone treating the drag as a scroll */
+.wz,.crgrip,#vHead,.overview,.knob,.fader,.platter,#libGrip{touch-action:none}
+/* the song list still scrolls with a finger */
+#libBody,.libwrap{touch-action:pan-x pan-y}
+/* "turn your phone sideways" message, shown only when held upright */
+#rotateHint{display:none}
+@media (orientation:portrait) and (pointer:coarse){
+  #rotateHint{display:flex;position:fixed;inset:0;z-index:99999;background:#0c0c0c;color:#dcdcdc;align-items:center;justify-content:center;flex-direction:column;gap:14px;font:600 18px/1.4 system-ui,sans-serif;text-align:center;padding:24px}
+  #rotateHint b{font-size:56px;line-height:1;transform:rotate(90deg)}
+}
